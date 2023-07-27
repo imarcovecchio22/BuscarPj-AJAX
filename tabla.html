@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/table.css">
+    <title>Tabla</title>
+
+</head>
+
+<body>
+<div id="datos_user">
+    <div class="reloj">10:15:20</div>
+
+    <script>
+        setInterval(() => {
+            var reloj = document.getElementsByClassName("reloj")[0];
+            var tiempoActual = new Date();
+            var hora = tiempoActual.getHours();
+            var minutos = tiempoActual.getMinutes();
+            var segundos = tiempoActual.getSeconds();
+            if (segundos < 10) {
+                segundos = `0${segundos}`;
+            }
+
+            reloj.innerHTML = `${hora}:${minutos}:${segundos}`;
+        }, 1000)
+    </script>
+
+    <button id="logOut"onclick="backPage()">Cerrar Sesion</button>
+</div>
+    <div id="container_search">
+    <p>Ingresar el numero de id del personaje a buscar</p>
+    <label>ID Personaje</label>
+    <input type="number" id="ID" >
+    <button id="btn_search" onclick="obtenerData()">Buscar</button>
+</div>
+    <p id="NotFound" style="color:red"></p>
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1> name</h1>
+                </th>
+                <th>
+                    <h1>status</h1>
+                </th>
+                <th>
+                    <h1> species </h1>
+                </th>
+                <th>
+                    <h1> type </h1>
+                </th>
+                <th>
+                    <h1> gender </h1>
+                </th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td onclick="getImage()" id="name"></td>
+                <td id="status"></td>
+                <td id="species"></td>
+                <td id="type"></td>
+                <td id="gender"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+<script src="js/table.js"></script>
+
+</html>

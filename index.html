@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+
+    <div class="login-box">
+    <form id="formulario">
+
+        <h2>LOGIN</h2>
+        <div class="user-box">
+            <input type="email" class="formulario_input" required autofocus id="mail" onblur="verificarUsuario()">
+        <label class="formulario_label">User</label>
+        </div>
+        <p id="mailErrado" style="color:rgb(247, 44, 44)"></p>
+        <br><br>
+        <div class="user-box">
+            <input type="password" class="formulario_input" id="password" required  onblur="verificarPassword()">
+            <label  class="formulario_label">Password</label>
+        </div>
+        <p id="passwordErrado" style="color:red"></p>
+
+        <button type="button" class="formulario_submit" onclick="validarCredenciales()">Login</button>
+        <p id=""></p> <br> <br> <br>
+    </form>
+
+    <p id="claveBloqueada"></p>
+
+</div>
+</body>
+
+<script src="js/codigo.js"></script>
+</html>
